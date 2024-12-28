@@ -35,10 +35,10 @@ public class bst
   public static void main(String args[])
   {
     Node root=null;
-    root=insert(root,10);
-    root=insert(root,20);
+    root=insert(root,24);
+    root=insert(root,28);
     root=insert(root,30);
-    System.out.println("Elements in BST are : 10 20 30 ");
+    System.out.println("Elements in BST are : 24 28 30 ");
   }
 }
  
