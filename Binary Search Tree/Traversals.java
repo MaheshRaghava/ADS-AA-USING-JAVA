@@ -1,83 +1,68 @@
-class Node
-{
-  int key;
-  Node left,right;
-  Node(int key)
-  {
-    this.key=key;
-    this.left=null;
-    this.right=null;
-  }
+class Node {
+    int key;
+    Node left,right;
+    Node(int key){
+        this.key=key;
+        left=right=null;
+    }
 }
-public class bst
-{
-  public static Node insert(Node root,int key)
-  {
-    if(root==null)
-    {
-      return new Node(key);
+ class bst{
+    static Node insert(Node root,int key) {
+        if(root==null){
+            return new Node(key);
+        }
+        if(root.key==key){
+            return root;
+        }
+        if(key>root.key){
+            root.right=insert(root.right, key);
+        }
+        else {
+            root.left=insert(root.left, key);
+        }
+        return root;
     }
-    else if(root.key==key)
-    {
-      return root;
-    }
-    else if(key>root.key)
-    {
-      root.right=insert(root.right,key);
-    }
-    else
-    {
-      root.left=insert(root.left,key);
-    }
-    return root;
-  }
-  public static void inorder(Node root)
-  {
-    if(root==null)
-    {
-      return;
-    }
-      inorder(root.left);
-      System.out.print(root.key+" ");
-      inorder(root.right);
-  }
-  public static void preorder(Node root)
-  {
-    if(root==null)
-    {
-      return;
-    }
-      System.out.print(root.key+" ");
-      inorder(root.left);
-      inorder(root.right);
-  }
-  public static void postorder(Node root)
-  {
-    if(root==null)
-    {
-      return;
-    }
-      inorder(root.left);
-      inorder(root.right);
-      System.out.print(root.key+" ");
-  }
-  public static void main(String args[])
-  {
-    Node root=null;
-    root=insert(root,24);
-    root=insert(root,28);
-    root=insert(root,30);
-    System.out.println("Elements in BST are : 24 28 30 ");
-    System.out.print("Inorder : ");
-    inorder(root); 
-    System.out.println(); 
-    System.out.print("Preorder : ");
-    preorder(root);
-    System.out.println(); 
-    System.out.print("Postorder : ");
-    postorder(root);
-  }
-}
- 
-    
 
+    
+    static void inorder(Node root){
+        if(root!=null){
+            inorder(root.left);
+            System.out.print(root.key+" ");
+            inorder(root.right);
+        }
+    }
+    static void preorder(Node root){
+        if(root!=null){
+            System.out.print(root.key+" ");
+
+            preorder(root.left);
+            
+            preorder(root.right);
+        }
+    }
+      static void postorder(Node root){
+        if(root!=null){
+            
+
+            postorder(root.left);
+            
+            postorder(root.right);
+            System.out.print(root.key+" ");
+        }
+    }
+         
+    public static void main(String args[]){
+        Node root=null;
+        int a[]={13,24,28,30};
+        for(int i=0;i<a.length;i++)
+        {
+            root=insert(root,a[i]);
+        }
+        inorder(root);
+        System.out.println();
+        preorder(root);
+        System.out.println();
+        postorder(root);
+        System.out.println();
+    }
+}
