@@ -1,4 +1,5 @@
-class Node {
+class Node
+{
     int key;
     Node left,right;
     Node(int key){
@@ -6,66 +7,80 @@ class Node {
         left=right=null;
     }
 }
- class bst{
-    static Node insert(Node root,int key) {
-        if(root==null){
+ class bst
+ {
+    static Node insert(Node root,int key)
+     {
+        if(root==null)
+        {
             return new Node(key);
         }
-        if(root.key==key){
+        if(root.key==key)
+        {
             return root;
         }
-        if(key>root.key){
+        if(key>root.key)
+        {
             root.right=insert(root.right, key);
         }
-        else {
+        else 
+        {
             root.left=insert(root.left, key);
         }
         return root;
     }
 
     
-    static void inorder(Node root){
-        if(root!=null){
+    static void inorder(Node root)
+     {
+        if(root!=null)
+        {
             inorder(root.left);
             System.out.print(root.key+" ");
             inorder(root.right);
         }
     }
-    static void preorder(Node root){
-        if(root!=null){
+    static void preorder(Node root)
+     {
+        if(root!=null)
+        {
             System.out.print(root.key+" ");
-
-            preorder(root.left);
-            
+            preorder(root.left); 
             preorder(root.right);
         }
     }
-      static void postorder(Node root){
-        if(root!=null){
-            
-
-            postorder(root.left);
-            
+      static void postorder(Node root)
+     {
+        if(root!=null)
+        {
+            postorder(root.left); 
             postorder(root.right);
             System.out.print(root.key+" ");
         }
     }
   
-    static Node delete(Node root,int key){
-        if(root==null){
+    static Node delete(Node root,int key)
+     {
+        if(root==null)
+        {
             return root;
         }
-        if(key>root.key){
+        if(key>root.key)
+        {
             root.right=delete(root.right,key);
         }
-        else if(key<root.key){
+        else if(key<root.key)
+        {
             root.left=delete(root.left,key);
         }
-        else{
-            if(root.left==null){
+        else
+        {
+            if(root.left==null)
+            {
                 return root.right;
             }
-            else if(root.right==null){
+            else if(root.right==null)
+            {
                 return root.left;
             }
             Node minnode=findmin(root.right);
@@ -75,8 +90,10 @@ class Node {
             return root;
     }
             
-            public static Node findmin(Node root){
-                while(root.left!=null){
+            public static Node findmin(Node root)
+     {
+                while(root.left!=null)
+                {
                     root=root.left;
                 }
                 return root;
