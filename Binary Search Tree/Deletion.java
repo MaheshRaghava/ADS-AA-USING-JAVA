@@ -89,10 +89,13 @@ class Node {
         {
             root=insert(root,a[i]);
         }
+        System.out.println("Inorder:");
         inorder(root);
         System.out.println();
+        System.out.println("Preorder:");
         preorder(root);
         System.out.println();
+        System.out.println("Postorder:");
         postorder(root);
         System.out.println();
         root=delete(root,24);
