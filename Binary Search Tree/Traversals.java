@@ -31,21 +31,20 @@ class Node {
             inorder(root.right);
         }
     }
-    static void preorder(Node root){
-        if(root!=null){
+    static void preorder(Node root)
+     {
+        if(root!=null)
+        {
             System.out.print(root.key+" ");
-
             preorder(root.left);
-            
             preorder(root.right);
         }
     }
-      static void postorder(Node root){
-        if(root!=null){
-            
-
-            postorder(root.left);
-            
+      static void postorder(Node root)
+     {
+        if(root!=null)
+        {
+            postorder(root.left); 
             postorder(root.right);
             System.out.print(root.key+" ");
         }
