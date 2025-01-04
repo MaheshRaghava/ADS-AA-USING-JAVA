@@ -82,11 +82,7 @@ class Node {
                 return root;
             }
            
-        
-    
-    
-    
-    public static void main(String args[]){
+        public static void main(String args[]){
         Node root=null;
         int a[]={13,24,28,30};
         for(int i=0;i<a.length;i++)
@@ -100,6 +96,5 @@ class Node {
         postorder(root);
         System.out.println();
         root=delete(root,24);
-        inorder(root);
-    }
+        }
 }
