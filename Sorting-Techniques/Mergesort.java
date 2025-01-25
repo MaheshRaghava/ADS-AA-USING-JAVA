@@ -1,5 +1,5 @@
 import java.util.*;
-public class Mergesort
+class Mergesort
 {
     private static int[] b; 
     public static void mergesort(int a[], int low, int high)
