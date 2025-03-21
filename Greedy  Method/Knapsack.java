@@ -11,7 +11,7 @@ class Item {
     }
 }
 
-public class Main {
+public class Greedyfractionalknapsack {
     public static double getMaxprofit(Item[] items, int m) {
         Arrays.sort(items, (a, b) -> Double.compare(b.ratio, a.ratio));
         double maxprofit = 0.0;
