@@ -38,7 +38,7 @@ public class Knapsack{
                 }
             }
         }
-        int[] ar=new int[n];
+        /*int[] ar=new int[n];
         int i = n, j = m;
         while (i > 0 && j > 0) {
             if (k[i][j] == k[i - 1][j]) {
@@ -49,11 +49,9 @@ public class Knapsack{
                 i--;
                 j -= w[i];
             }
-        }
+        }*/
 
         System.out.println("Maximum profit: " + k[n][m]);
-        for(int num:ar){
-            System.out.print(num+" ");
-        }
+      
     }
 }
