@@ -1,45 +1,31 @@
 import java.util.*;
-class LinearSearch
-{
-
-    public static int linearSearch(int[] arr, int search)
-    {
-        for (int i = 0; i < arr.length; i++)
-        {
-            if (arr[i] == search) {
-                return i;
+class LinearSearch {
+    static int linearSearch(int a[], int n, int key) {
+        int pos = -1;
+        for (int i = 0; i < n; i++) {
+            if (a[i] == key) {
+                pos = i + 1;
+                break;
             }
         }
-        return -1;
-    }
-    public static int[] getInputArray(Scanner sc, int n) {
-        int[] arr = new int[n];
-        System.out.println("Enter the elements: ");
-        for (int i = 0; i < n; i++)
-        {
-            arr[i] = sc.nextInt();
+        if (pos > 0) {
+            System.out.println("Key is found at " + pos);
+        } else {
+            System.out.println("Key is not found");
         }
-        return arr;
+        return pos;
     }
-
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter size of array: ");
+        System.out.print("Enter the size of array: ");
         int n = sc.nextInt();
-        int[] arr = getInputArray(sc, n);
-
-        System.out.println("Enter the element to search: ");
-        int search = sc.nextInt();
-
-        int index = linearSearch(arr, search);
-
-        if (index != -1)
-        {
-            System.out.println("Element found at " + index + " index");
-        } else
-        {
-            System.out.println("Element not found");
+        int a[] = new int[n];
+        System.out.println("Enter elements in array: ");
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
         }
+        System.out.printf("Enter a key to search: ");
+        int key = sc.nextInt();
+        linearSearch(a, n, key);
     }
 }
